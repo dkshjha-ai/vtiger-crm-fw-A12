@@ -64,7 +64,7 @@ public class EditOrganizationTest {
 
 		WebElement arField = driver.findElement(By.name("annual_revenue"));
 		arField.clear();
-		arField.sendKeys("4000000");  // new annual revenue
+		arField.sendKeys("5000000");  // new annual revenue
 
 		Thread.sleep(1000);
 
@@ -75,16 +75,15 @@ public class EditOrganizationTest {
 
 		// Verification
 		String expectedPhone = "99988877566";
-		String updatedPhone = driver.findElement(By.id("phone")).getText();
-
-		if(updatedPhone.equals(expectedPhone)) {
-		    System.out.println("Organization updated successfully.");
-		} else {
-		    System.out.println("Update failed!");
-		}
-
+		String updatedPhone = driver.findElement(By.xpath("//td[span[@vtfieldname='phone']]")).getText();
 		
-		Thread.sleep(5000);
+		if (updatedPhone.equals(expectedPhone)) {
+            System.out.println("Organization updated successfully.");
+        } else {
+            System.out.println("Update failed! Expected: " + expectedPhone + ", Found: " + updatedPhone);
+        }
+		
+		Thread.sleep(3000);
 		WebElement profilePic= driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
 			
 		Actions act = new Actions(driver);
