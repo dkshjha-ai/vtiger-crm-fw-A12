@@ -1,7 +1,15 @@
 package organiztion;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -11,7 +19,22 @@ import org.openqa.selenium.support.ui.Select;
 
 public class CreateOrganizationTest {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
+		
+		//Get Data From Excel File
+		
+		FileInputStream fisExcel = new FileInputStream("./src/test/resources/TestScriptData.xlsx");
+		
+		Workbook wb = WorkbookFactory.create(fisExcel);
+		
+		Sheet sh = wb.getSheet("org");
+		
+		Row row = sh.getRow(6);
+		
+		Cell cell = row.getCell(0);
+		
+		String orgName = cell.getStringCellValue() + (int)(Math.random()*10000);
+		
 		//open browswer
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
@@ -39,7 +62,7 @@ public class CreateOrganizationTest {
 		
 		//Filling data to the form
 		WebElement orgField= driver.findElement(By.name("accountname"));
-		String orgName= "automationwithDJ04";
+		//String orgName= "automationwithDJ04";
 		orgField.sendKeys(orgName);
 		
 		Thread.sleep(1000);
