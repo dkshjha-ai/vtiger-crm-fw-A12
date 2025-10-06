@@ -17,23 +17,33 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import generic_utility.FileUtility;
+
 public class CreateOrganizationTest {
 
 	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
+		FileUtility fUtil = new FileUtility();
+		
+		//Get Data From Property File
+		String Browser = fUtil.getDataFromPropertiesFile("bro");
+		String URL = fUtil.getDataFromPropertiesFile("url");
+		String USERNAME = fUtil.getDataFromPropertiesFile("un");
+		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
 		
 		//Get Data From Excel File
+		String orgName = fUtil.getStringDataFromExcelFile("org", 3, 0);
 		
-		FileInputStream fisExcel = new FileInputStream("./src/test/resources/TestScriptData.xlsx");
+		//FileInputStream fisExcel = new FileInputStream("./src/test/resources/TestScriptData.xlsx");
 		
-		Workbook wb = WorkbookFactory.create(fisExcel);
+		//Workbook wb = WorkbookFactory.create(fisExcel);
 		
-		Sheet sh = wb.getSheet("org");
+		//Sheet sh = wb.getSheet("org");
 		
-		Row row = sh.getRow(6);
+		//Row row = sh.getRow(6);
 		
-		Cell cell = row.getCell(0);
+		//Cell cell = row.getCell(0);
 		
-		String orgName = cell.getStringCellValue() + (int)(Math.random()*10000);
+		//String orgName = cell.getStringCellValue() + (int)(Math.random()*10000);
 		
 		//open browswer
 		WebDriver driver = new ChromeDriver();
