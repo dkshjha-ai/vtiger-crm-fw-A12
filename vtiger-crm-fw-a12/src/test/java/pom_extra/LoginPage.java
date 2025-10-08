@@ -15,13 +15,13 @@ public class LoginPage {
 	
 	//declaration
 	@FindBy(id="user-name")
-	WebElement un;
+	private WebElement un;
 	
 	@FindBy(id ="password")
-	WebElement pwd;
+	private WebElement pwd;
 	
 	@FindBy(id = "login-button")
-	WebElement login;
+	private WebElement login;
 	
 	//Getters
 	public WebElement getUn() {
@@ -37,3 +37,4 @@ public class LoginPage {
 	}
 
 }
+
