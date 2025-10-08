@@ -12,10 +12,11 @@ public class ConfirmationPage {
 	}
 	
 	@FindBy(linkText = "FINISH")
-	WebElement finish;
+	private WebElement finish;
 	
 	public WebElement getFinish() {
 		return finish;
 	}
 
 }
+
