@@ -18,6 +18,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import generic_utility.FileUtility;
+import generic_utility.WebDriverUtility;
+import object_repository.HomePage;
+import object_repository.LoginPage;
+import object_repository.OrgPage;
+import object_repository.VerifyOrgPage;
 
 public class CreateOrganizationTest {
 
@@ -31,7 +36,7 @@ public class CreateOrganizationTest {
 		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
 		
 		//Get Data From Excel File
-		String orgName = fUtil.getStringDataFromExcelFile("org", 3, 0);
+		String orgName = fUtil.getStringDataFromExcelFile("org", 5, 0);
 		
 		//FileInputStream fisExcel = new FileInputStream("./src/test/resources/TestScriptData.xlsx");
 		
@@ -51,77 +56,109 @@ public class CreateOrganizationTest {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 		
 		//Login
-		driver.get("http://localhost:8888/");
+		driver.get(URL);
+		
+		LoginPage lp = new LoginPage(driver);
 		
 		//Enter UserName
-		WebElement un= driver.findElement(By.name("user_name"));
-		un.sendKeys("admin");
+		//WebElement un= driver.findElement(By.name("user_name"));
+		//un.sendKeys("admin");
 		
 		//Enter Password
-		WebElement pwd = driver.findElement(By.name("user_password"));
-		pwd.sendKeys("manager");
+		//WebElement pwd = driver.findElement(By.name("user_password"));
+		//pwd.sendKeys("manager");
 		
 		//Click LogIn
-		driver.findElement(By.id("submitButton")).click();
+		//driver.findElement(By.id("submitButton")).click();
+		
+		lp.login();
+		
 		
 		//Create organization
-		driver.findElement(By.linkText("Organizations")).click();
+		//driver.findElement(By.linkText("Organizations")).click();
+		
+		HomePage hp = new HomePage(driver);
+		hp.getorgLink().click();
 		
 		Thread.sleep(2000);
-		driver.findElement(By.cssSelector("img[alt='Create Organization...']")).click();
+		//driver.findElement(By.cssSelector("img[alt='Create Organization...']")).click();
 		
 		//Filling data to the form
-		WebElement orgField= driver.findElement(By.name("accountname"));
+		
+		OrgPage op = new OrgPage(driver);
+		
+		op.getOrgPlusIcon().click();
+		//WebElement orgField= driver.findElement(By.name("accountname"));
 		//String orgName= "automationwithDJ04";
+		
+		WebElement orgField= op.getOrgField();
 		orgField.sendKeys(orgName);
 		
 		Thread.sleep(1000);
-		WebElement websiteField= driver.findElement(By.name("website"));
-		String WebS= "https://abccompany.com";
+		//WebElement websiteField= driver.findElement(By.name("website"));
+		String WebS= "https://abcdecompany.com";
+		
+		WebElement websiteField= op.getWebsite();
 		websiteField.sendKeys(WebS);
 		
 		Thread.sleep(1000);
-		WebElement phoneField = driver.findElement(By.id("phone"));
+		//WebElement phoneField = driver.findElement(By.id("phone"));
 		String phone= "8766564533";
+		
+		WebElement phoneField = op.getPhone();
 		phoneField.sendKeys(phone);
 		
 		Thread.sleep(1000);
-		WebElement empField= driver.findElement(By.id("employees"));
+		//WebElement empField= driver.findElement(By.id("employees"));
 		String emp = "50";
+		
+		WebElement empField= op.getEmp();
 		empField.sendKeys(emp);
 		
 		Thread.sleep(1000);
-		WebElement emailField = driver.findElement(By.id("email1"));
+		//WebElement emailField = driver.findElement(By.id("email1"));
 		String email= "dj@gmail.com";
+		
+		WebElement emailField = op.getEmail();
 		emailField.sendKeys(email);
 		
 		Thread.sleep(1000);
-		WebElement industryDD= driver.findElement(By.name("industry"));
+		
+		WebElement industryDD= op.getIndustry();
+		//WebElement industryDD= driver.findElement(By.name("industry"));
 		Select sel = new Select(industryDD);
 		sel.selectByVisibleText("Education");
 		
 		Thread.sleep(1000);
-		WebElement ratingDD= driver.findElement(By.name("rating"));
+		WebElement ratingDD = op.getRating();
+		//WebElement ratingDD= driver.findElement(By.name("rating"));
 		Select sel2 = new Select(ratingDD);
 		sel2.selectByValue("Active");
 		
 		Thread.sleep(1000);
-		WebElement typeDD = driver.findElement(By.name("accounttype"));
+		WebElement typeDD = op.getAcctype();
+		//WebElement typeDD = driver.findElement(By.name("accounttype"));
 		Select sel3 = new Select(typeDD);
 		sel3.selectByValue("Customer");
 		
 		Thread.sleep(1000);
-		WebElement arField = driver.findElement(By.name("annual_revenue"));
+		WebElement arField= op.getAnnualrev();
+		
+		//WebElement arField = driver.findElement(By.name("annual_revenue"));
 		String ar="3000000";
 		arField.sendKeys(ar);
 		
 		Thread.sleep(3000);
 		
 		//Save
-		driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();
+		op.getSaveBtn().click();
+		//driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();
 		
 		//Verification
-		String actOrgName = driver.findElement(By.id("dtlview_Organization Name")).getText();
+		//String actOrgName = driver.findElement(By.id("dtlview_Organization Name")).getText();
+		
+		VerifyOrgPage vop = new VerifyOrgPage(driver);
+		String actOrgName = vop.getActOrgName().getText();
 		
 		if(actOrgName.equals(orgName)) {
 			System.out.println("Created Organization successfully");
@@ -133,14 +170,20 @@ public class CreateOrganizationTest {
 		}
 		
 		Thread.sleep(1000);
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+
+		WebElement profilePic= hp.getprofilepic();
+		profilePic.click();
+		//WebElement profilePic= driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
 		
-		WebElement profilePic= driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
+		//Actions act = new Actions(driver);
+		//act.moveToElement(profilePic).build().perform();
 		
-		Actions act = new Actions(driver);
-		act.moveToElement(profilePic).build().perform();
-		
+		wdUtil.hover(profilePic);
 		Thread.sleep(2000);
-		driver.findElement(By.linkText("Sign Out")).click();
+		
+		hp.getsignOutLink().click();
+		//driver.findElement(By.linkText("Sign Out")).click();
 		
 		Thread.sleep(3000);
 		driver.quit();

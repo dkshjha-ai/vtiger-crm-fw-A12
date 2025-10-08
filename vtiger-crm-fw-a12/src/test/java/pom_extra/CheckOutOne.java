@@ -11,14 +11,14 @@ public class CheckOutOne {
 	}
 	
 	@FindBy(id = "shopping_cart_container")
-	WebElement shoppingcart;
+	private WebElement shoppingcart;
 	
 	public WebElement getShoppingCart() {
 		return shoppingcart;
 	}
 
 	@FindBy(linkText = "CHECKOUT")
-	WebElement checkout;
+	private WebElement checkout;
 	
 	public WebElement getCheckOut() {
 		return checkout;

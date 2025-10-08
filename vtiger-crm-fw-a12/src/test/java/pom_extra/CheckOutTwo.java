@@ -11,16 +11,16 @@ public class CheckOutTwo {
 	}
 	
 	@FindBy(id = "first-name")
-	WebElement fn;
+	private WebElement fn;
 	
 	@FindBy(id = "last-name")
-	WebElement ln;
+	private WebElement ln;
 	
 	@FindBy(id = "postal-code")
-	WebElement pc;
+	private WebElement pc;
 	
 	@FindBy(className ="cart_button")
-	WebElement btn;
+	private WebElement btn;
 	
 	public WebElement getFn() {
 		return fn;
