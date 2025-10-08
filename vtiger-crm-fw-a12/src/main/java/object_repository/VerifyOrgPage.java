@@ -7,7 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public class VerifyOrgPage {
 	
-	
 	public VerifyOrgPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}

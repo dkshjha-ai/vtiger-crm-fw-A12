@@ -14,7 +14,6 @@ public class OrgPage {
 	@FindBy(css ="img[alt='Create Organization...']")
 	private WebElement orgPlusIcon;
 	
-	
 	@FindBy(name="accountname")
 	private WebElement orgField;
 	

@@ -32,7 +32,6 @@ public class LoginPage {
 		return pwd;
 	}
 	
-	
 	public WebElement getLoginBtn() {
 		return loginbtn;
 	}

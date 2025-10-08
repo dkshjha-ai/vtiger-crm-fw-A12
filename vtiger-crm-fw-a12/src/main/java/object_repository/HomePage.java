@@ -14,6 +14,7 @@ public class HomePage {
 	@FindBy(linkText = "Organizations")
 	private WebElement orgLink;
 	
+	
 	public WebElement getorgLink() {
 		return orgLink;
 		
