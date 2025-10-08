@@ -36,7 +36,7 @@ public class CreateOrganizationTest {
 		String PASSWORD = fUtil.getDataFromPropertiesFile("pwd");
 		
 		//Get Data From Excel File
-		String orgName = fUtil.getStringDataFromExcelFile("org", 7, 0);
+		String orgName = fUtil.getStringDataFromExcelFile("org", 6, 0);
 		
 		//FileInputStream fisExcel = new FileInputStream("./src/test/resources/TestScriptData.xlsx");
 		

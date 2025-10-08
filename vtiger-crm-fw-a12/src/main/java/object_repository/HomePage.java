@@ -16,6 +16,7 @@ public class HomePage {
 	
 	public WebElement getorgLink() {
 		return orgLink;
+		
 	}
 	
 	@FindBy(css ="img[src='themes/softed/images/user.PNG']")
