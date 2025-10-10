@@ -1,0 +1,26 @@
+package testng_extra;
+
+import org.testng.Reporter;
+import org.testng.annotations.Test;
+
+public class DemoTest {
+	
+	@Test
+	public void case1() {
+		System.out.println("Hey there!"); //console
+		
+	}
+	
+	@Test
+	public void case2() {
+		Reporter.log("case 2 : Plz go elsewhere...."); //report
+	}
+	
+	@Test
+	public void case3() {
+		Reporter.log("case 3 : Plz go elsewhere...", true); //report+ console
+	}
+	
+	
+
+}
