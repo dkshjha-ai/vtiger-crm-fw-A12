@@ -1,53 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="11" passed="10" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-13T03:59:43 IST" name="Default suite" finished-at="2025-10-13T04:00:03 IST" duration-ms="19915">
+  <suite started-at="2025-10-13T04:17:34 IST" name="Default suite" finished-at="2025-10-13T04:17:46 IST" duration-ms="12571">
     <groups>
     </groups>
-    <test started-at="2025-10-13T03:59:43 IST" name="Default test" finished-at="2025-10-13T04:00:03 IST" duration-ms="19915">
-      <class name="testng_extra.DemoForInvocationTest">
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:43 IST" name="case3" finished-at="2025-10-13T03:59:49 IST" duration-ms="6141" status="PASS">
+    <test started-at="2025-10-13T04:17:34 IST" name="Default test" finished-at="2025-10-13T04:17:46 IST" duration-ms="12571">
+      <class name="types_of_execution.Demo1">
+        <test-method signature="case1()[pri:0, instance:types_of_execution.Demo1@34123d65]" started-at="2025-10-13T04:17:34 IST" name="case1" finished-at="2025-10-13T04:17:41 IST" duration-ms="6714" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:43 IST" name="case3" finished-at="2025-10-13T03:59:49 IST" duration-ms="6141" status="PASS">
+        </test-method> <!-- case1 -->
+        <test-method signature="case101()[pri:0, instance:types_of_execution.Demo1@34123d65]" started-at="2025-10-13T04:17:41 IST" name="case101" finished-at="2025-10-13T04:17:46 IST" duration-ms="5820" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:43 IST" name="case3" finished-at="2025-10-13T03:59:49 IST" duration-ms="6127" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:49 IST" name="case3" finished-at="2025-10-13T03:59:54 IST" duration-ms="4449" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:49 IST" name="case3" finished-at="2025-10-13T03:59:54 IST" duration-ms="4469" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:49 IST" name="case3" finished-at="2025-10-13T03:59:54 IST" duration-ms="4410" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:54 IST" name="case3" finished-at="2025-10-13T03:59:59 IST" duration-ms="4906" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:54 IST" name="case3" finished-at="2025-10-13T03:59:59 IST" duration-ms="4880" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:54 IST" name="case3" finished-at="2025-10-13T03:59:59 IST" duration-ms="4833" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-        <test-method signature="case3()[pri:0, instance:testng_extra.DemoForInvocationTest@59474f18]" started-at="2025-10-13T03:59:59 IST" name="case3" finished-at="2025-10-13T04:00:03 IST" duration-ms="4422" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- case3 -->
-      </class> <!-- testng_extra.DemoForInvocationTest -->
+        </test-method> <!-- case101 -->
+      </class> <!-- types_of_execution.Demo1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
