@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="dp_extra.ArrayCheck">
+      <class name="types_of_execution.Demo3">
         <methods>
-          <include name="loginToSauceDemo"/>
+          <include name="case4"/>
         </methods>
-      </class> <!-- dp_extra.ArrayCheck -->
+      </class> <!-- types_of_execution.Demo3 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
