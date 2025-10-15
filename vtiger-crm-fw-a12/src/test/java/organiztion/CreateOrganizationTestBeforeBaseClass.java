@@ -24,7 +24,7 @@ import object_repository.LoginPage;
 import object_repository.OrgPage;
 import object_repository.VerifyOrgPage;
 
-public class CreateOrganizationTest {
+public class CreateOrganizationTestBeforeBaseClass {
 
 	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
 		FileUtility fUtil = new FileUtility();

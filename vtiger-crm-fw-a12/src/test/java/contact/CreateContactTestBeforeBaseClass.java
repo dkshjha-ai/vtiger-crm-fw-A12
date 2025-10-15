@@ -21,7 +21,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import generic_utility.WebDriverUtility;
 
-public class CreateContactTest {
+public class CreateContactTestBeforeBaseClass {
 	
 	public static void main(String[] args) throws InterruptedException, EncryptedDocumentException, IOException {
 		
